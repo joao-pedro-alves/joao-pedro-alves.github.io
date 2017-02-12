@@ -7973,6 +7973,8 @@ a {
   #global-header .top-head {
     padding: 15px 0;
     background-color: #D90000; }
+    #global-header .top-head .site-url:focus {
+      text-decoration: none; }
   #global-header .bottom-head {
     padding: 15px 0;
     color: #D90000; }
