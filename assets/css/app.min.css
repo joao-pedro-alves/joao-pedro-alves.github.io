@@ -7683,8 +7683,7 @@ a {
     background-color: #D90000; }
   #global-header .bottom-head {
     padding: 15px 0;
-    color: #D90000;
-    border-bottom: 1px solid #F1DBDB; }
+    color: #D90000; }
     #global-header .bottom-head h2 {
       margin: 0;
       padding: 0;
@@ -7772,3 +7771,7 @@ time {
     .default-pagination-nav .pagination > li.active > a {
       color: #fff;
       background-color: #D90000; }
+
+.alone-border {
+  display: block;
+  border-top: 1px solid #F1DBDB; }
