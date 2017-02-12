@@ -2,7 +2,7 @@
 <main id="post-page">
 	<div class="container-fluid">
 		<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-				<time datetime="2008-02-14 20:00">{{ page.date | date: "%-d %B %Y" }}</time>
+				<time datetime="{{ page.date | date_to_long_string }}">{{ page.date | date: "%-d %B %Y" }}</time>
 			<h1>{{ page.title }}</h1>
 			<section class="post-content">{{ page.content }}</section>
 		</div>
