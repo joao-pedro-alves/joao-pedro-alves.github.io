@@ -7659,7 +7659,116 @@ button.close {
 /*# sourceMappingURL=bootstrap.min.css.map */
 
 body {
-  font-family: 10px;
-  font-weight: 10; }
-  body h1 {
-    font-weight: 10px; }
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  color: #454545; }
+
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #F4F4F4; }
+
+a {
+  color: #D90000;
+  transition: .5s all; }
+  a:hover, a:focus, a:active {
+    color: #E77C7C; }
+
+#global-header {
+  text-align: center; }
+  #global-header .top-head {
+    padding: 15px 0;
+    background-color: #D90000; }
+  #global-header .bottom-head {
+    padding: 15px 0;
+    color: #D90000;
+    border-bottom: 1px solid #F1DBDB; }
+    #global-header .bottom-head h2 {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      font-weight: 300; }
+  #global-header .title-name {
+    font-size: 18px; }
+    #global-header .title-name .transp {
+      color: rgba(255, 255, 255, 0.3); }
+    #global-header .title-name h1 {
+      font-size: inherit;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      color: #D90000;
+      background-color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px; }
+
+#global-content {
+  margin: 40px 0; }
+
+#global-footer .footer-content {
+  border-top: 1px solid #F1DBDB;
+  padding: 20px 0;
+  text-align: center; }
+
+time {
+  font-size: 14px;
+  color: #B0B0B0; }
+
+.article-list .main-article {
+  margin-bottom: 40px; }
+  .article-list .main-article:last-child {
+    margin-bottom: 0; }
+
+.main-article {
+  position: relative;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #E5E5E5;
+  border-top-right-radius: 30px;
+  overflow: hidden; }
+  .main-article h1 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 22px;
+    color: #D90000; }
+    .main-article h1 a {
+      color: inherit; }
+  .main-article p {
+    margin-bottom: 20px; }
+  .main-article .article-icon {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 100px;
+    height: 100px;
+    border-bottom-left-radius: 50px;
+    background-color: #D90000; }
+    .main-article .article-icon img {
+      position: absolute; }
+      .main-article .article-icon img.bullshit {
+        bottom: 16px;
+        left: 16px; }
+      .main-article .article-icon img.laravel {
+        bottom: 15px;
+        left: 10px; }
+      .main-article .article-icon img.cakephp {
+        bottom: 15px;
+        left: 13px; }
+
+.default-pagination-nav {
+  margin-top: 40px;
+  text-align: center; }
+  .default-pagination-nav .pagination {
+    margin: 0; }
+    .default-pagination-nav .pagination > li > a {
+      border-radius: 5px !important;
+      border-color: #E5E5E5;
+      color: #D90000;
+      margin: 0 2.5px; }
+    .default-pagination-nav .pagination > li.active > a {
+      color: #fff;
+      background-color: #D90000; }
