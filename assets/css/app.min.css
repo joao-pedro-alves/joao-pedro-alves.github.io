@@ -7658,6 +7658,16 @@ button.close {
 
 /*# sourceMappingURL=bootstrap.min.css.map */
 
+.main-article, #post-page .post-content {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #E5E5E5; }
+
+#post-page h1, #post-page .post-author h1 {
+  color: #D90000;
+  margin-bottom: 20px;
+  font-size: 1.294rem; }
+
 html {
   font-size: 17px; }
   @media (max-width: 768px) {
@@ -7736,9 +7746,7 @@ time {
 
 .main-article {
   position: relative;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #E5E5E5;
+  padding-right: 40px;
   border-top-right-radius: 30px;
   overflow: hidden; }
   .main-article h1 {
@@ -7748,9 +7756,6 @@ time {
     color: #D90000; }
     .main-article h1 a {
       color: inherit; }
-    @media (max-width: 375px) {
-      .main-article h1 {
-        padding-right: 40px; } }
   .main-article p {
     margin-bottom: 20px; }
   .main-article .article-icon {
@@ -7789,4 +7794,41 @@ time {
 
 .alone-border {
   display: block;
+  border-top: 1px solid #F1DBDB; }
+
+#post-page h1 {
+  margin-bottom: 40px;
+  font-size: 1.647rem; }
+
+#post-page .post-content p {
+  margin-bottom: 20px; }
+  #post-page .post-content p:last-child {
+    margin-bottom: 0; }
+
+#post-page .post-content time {
+  display: block;
+  margin-bottom: 20px;
+  text-align: right; }
+
+#post-page .post-author {
+  display: block;
+  margin-top: 40px;
+  background-color: #D90000;
+  padding: 20px;
+  text-align: center;
+  color: #fff; }
+  #post-page .post-author figure {
+    margin-bottom: 15px; }
+  #post-page .post-author h1 {
+    color: #fff !important; }
+  #post-page .post-author p {
+    margin: 0;
+    font-size: 0.9412rem; }
+  #post-page .post-author a {
+    color: #fff;
+    font-weight: bold; }
+
+#post-page .comments-box {
+  margin-top: 45px;
+  padding-top: 30px;
   border-top: 1px solid #F1DBDB; }

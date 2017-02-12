@@ -14,10 +14,9 @@ time {
 }
 
 .main-article {
+	@extend %box-default;
 	position: relative;
-	padding: 20px;
-	background-color: #fff;
-	border: 1px solid $border-color;
+	padding-right: 40px;
 	border-top-right-radius: 30px;
 	overflow: hidden;
 
@@ -29,10 +28,6 @@ time {
 
 		a {
 			color: inherit;
-		}
-
-		@media(max-width: 375px) {
-			padding-right: 40px;
 		}
 	}
 
