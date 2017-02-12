@@ -1,5 +1,5 @@
 time {
-	font-size: 14px;
+	font-size: 0.8235rem;
 	color: #B0B0B0;
 }
 
@@ -24,11 +24,15 @@ time {
 	h1 {
 		margin-bottom: 20px;
 		font-weight: bold;
-		font-size: 22px;
+		font-size: 1.294rem;
 		color: $main-color;
 
 		a {
 			color: inherit;
+		}
+
+		@media(max-width: 375px) {
+			padding-right: 40px;
 		}
 	}
 

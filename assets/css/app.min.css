@@ -7658,10 +7658,22 @@ button.close {
 
 /*# sourceMappingURL=bootstrap.min.css.map */
 
+html {
+  font-size: 17px; }
+  @media (max-width: 768px) {
+    html {
+      font-size: 16px; } }
+  @media (max-width: 450px) {
+    html {
+      font-size: 14px; } }
+  @media (max-width: 375px) {
+    html {
+      font-size: 14px; } }
+
 body {
   font-family: 'Lato', sans-serif;
-  font-size: 17px;
-  color: #454545; }
+  color: #454545;
+  font-size: 1rem; }
 
 h1, h2, h3, h4 {
   margin: 0;
@@ -7687,10 +7699,10 @@ a {
     #global-header .bottom-head h2 {
       margin: 0;
       padding: 0;
-      font-size: 20px;
+      font-size: 1.176rem;
       font-weight: 300; }
   #global-header .title-name {
-    font-size: 18px; }
+    font-size: 1.059rem; }
     #global-header .title-name .transp {
       color: rgba(255, 255, 255, 0.3); }
     #global-header .title-name h1 {
@@ -7714,7 +7726,7 @@ a {
   text-align: center; }
 
 time {
-  font-size: 14px;
+  font-size: 0.8235rem;
   color: #B0B0B0; }
 
 .article-list .main-article {
@@ -7732,10 +7744,13 @@ time {
   .main-article h1 {
     margin-bottom: 20px;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 1.294rem;
     color: #D90000; }
     .main-article h1 a {
       color: inherit; }
+    @media (max-width: 375px) {
+      .main-article h1 {
+        padding-right: 40px; } }
   .main-article p {
     margin-bottom: 20px; }
   .main-article .article-icon {
