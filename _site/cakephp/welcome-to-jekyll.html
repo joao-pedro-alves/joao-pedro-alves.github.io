@@ -3,7 +3,7 @@
 <head>
 	<title>João Pedro Alves - Desenvolvimento WEB</title>
 	<meta charset="UTF-8" />
-	<link rel="stylesheet" href="http://localhost:4000/assets/css/app.min.css" />
+	<link rel="stylesheet" href="http://localhost:4000/assets/css/app.min.css?2" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 <body>
@@ -24,49 +24,37 @@
 	<div class="container-fluid">
 		<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 				<time datetime="2008-02-14 20:00">9 February 2017</time>
-			<h1>Welcome to Jekyll!</h1>
+			<h1>Welcome to Jekyll! 123</h1>
 			<section class="post-content"><p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated asda sda da sd asda dsa.</p>
 
 <p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
 
 <p>Jekyll also offers powerful support for code snippets:</p>
 
-<blockquote>
-  <p>joao pedro
-alves de
-souza porra</p>
-</blockquote>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">testando</span> <span class="k">extends</span> <span class="nx">algo</span>
+<span class="p">{</span>
+	<span class="k">private</span> <span class="nv">$algo</span><span class="p">;</span>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+	<span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">Algo</span> <span class="nv">$algo</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">algo</span> <span class="o">=</span> <span class="nv">$algo</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
 
 </section>
-			<section class="comments-box">
-				<div id="disqus_thread"></div>
-				<script>
-				/**
-				*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-				*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-				/*
-				var disqus_config = function () {
-				this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-				this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-				};
-				*/
-				(function() { // DON'T EDIT BELOW THIS LINE
-				var d = document, s = d.createElement('script');
-				s.src = '//joaopedroalves.disqus.com/embed.js';
-				s.setAttribute('data-timestamp', +new Date());
-				(d.head || d.body).appendChild(s);
-				})();
-				</script>
-				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                  
-			</section>
 		</div>
 	</div>
 	<section class="post-author">
@@ -74,9 +62,33 @@ souza porra</p>
 			<img src="http://localhost:4000/assets/img/joao-pedro-alves-photo.png" alt="João Pedro Alves" />
 		</figure>
 		<h1>João Pedro Alves</h1>
-		<p>Desenvolvedor <b>FISSURADO</b> web por mais de 6 anos</p>
+		<p>Desenvolvedor <b>FISSURADO</b> web</p>
 		<p>Atualmente membro mais <u>pistola</u> do time <a href="https://primepass.club" target="_blank">Primepass</a>!</p>
 	</section>
+	<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+		<section class="comments-box">
+			<div id="disqus_thread"></div>
+			<script>
+			/**
+			*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+			*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+			
+			var disqus_config = function () {
+				this.page.url = 'http://localhost:4000/cakephp/welcome-to-jekyll.html';
+				this.page.identifier = '/cakephp/welcome-to-jekyll';
+				this.page.title = 'Welcome to Jekyll! 123';
+			};
+			
+			(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//joaopedroalves.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                  
+		</section>
+	</div>
 </main>
 		</div>
 		<footer id="global-footer">

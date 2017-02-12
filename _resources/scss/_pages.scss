@@ -37,7 +37,9 @@
 
 		h1 {
 			@extend %default-title;
+			margin-bottom: 15px;
 			color: #fff!important;
+			font-weight: bold;
 		}
 
 		p {
@@ -52,8 +54,6 @@
 	}
 
 	.comments-box {
-		margin-top: 45px;
-		padding-top: 30px;
-		border-top: 1px solid $transp-color;
+		margin: 40px 0;
 	}
 }

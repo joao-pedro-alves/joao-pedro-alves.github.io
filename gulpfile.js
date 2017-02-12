@@ -13,7 +13,8 @@ gulp.task('sass', function(cb) {
 		gulp.src([
 			'./node_modules/font-awesome/css/font-awesome.min.css',
 			'./node_modules/bootstrap/dist/css/bootstrap.min.css',
-			'./_resources/scss/app.scss'
+			'./_resources/vendor/code-highlight.css',
+			'./_resources/scss/app.scss',
 		]),
 		sass({
 			outputStyle: debug ? '' : 'compressed'
