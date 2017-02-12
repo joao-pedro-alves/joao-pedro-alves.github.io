@@ -1,0 +1,40 @@
+{% include header.html %}
+<main id="post-page">
+	<div class="container-fluid">
+		<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<time datetime="2008-02-14 20:00">{{ page.date | date: "%-d %B %Y" }}</time>
+			<h1>{{ page.title }}</h1>
+			<section class="post-content">{{ page.content }}</section>
+			<section class="comments-box">
+				<div id="disqus_thread"></div>
+				<script>
+				/**
+				*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+				*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+				/*
+				var disqus_config = function () {
+				this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+				this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				};
+				*/
+				(function() { // DON'T EDIT BELOW THIS LINE
+				var d = document, s = d.createElement('script');
+				s.src = '//joaopedroalves.disqus.com/embed.js';
+				s.setAttribute('data-timestamp', +new Date());
+				(d.head || d.body).appendChild(s);
+				})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                  
+			</section>
+		</div>
+	</div>
+	<section class="post-author">
+		<figure>
+			<img src="{{ site.url }}/assets/img/joao-pedro-alves-photo.png" alt="João Pedro Alves" />
+		</figure>
+		<h1>João Pedro Alves</h1>
+		<p>Desenvolvedor <b>FISSURADO</b> web por mais de 6 anos</p>
+		<p>Atualmente membro mais <u>pistola</u> do time <a href="https://primepass.club" target="_blank">Primepass</a>!</p>
+	</section>
+</main>
+{% include footer.html %}
