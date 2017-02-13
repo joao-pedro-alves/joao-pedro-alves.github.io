@@ -30,7 +30,7 @@ Sim, eu sei... Existem diversos fóruns e diversas pessoas que contribuem com as
 
 Aqui vou estar falando de **MUITA** coisa bacana do mundo web *(as coisas que eu acho bacana ao menos)*.
 
-Nessa sopa de letrinhas, pode por `CakePHP`, `Laravel`, `NodeJS`, `React`, `Angular`, **`coisas teóricas legais`**, `open-source`, `...`
+Nessa sopa de letrinhas, pode por `CakePHP`, `Laravel`, `NodeJS`, `React`, `Angular`, **`coisas teóricas legais`**, `open-source`, `front-end no geral` e `bullshit (tenho até uma categoria só para isso)`
 
 **Resumão:** Vou focar mais em assuntos um pouco mais complexos das ferramentas retratando situações do **mundo real**. Vamos aplicar *(muitas vezes em projetos reais)* toda essa bagaça e trocar experiências reais.
 
