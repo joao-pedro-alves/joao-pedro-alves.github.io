@@ -1,28 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-12T21:27:02-02:00</updated><id>http://localhost:4000//</id><title type="html">João Pedro Alves - Desenvolvimento web PISTOLA!</title><subtitle>Artigos, tutoriais e dicas sobre desenvolvimento web</subtitle><entry><title type="html">Welcome to Jekyll! 123</title><link href="http://localhost:4000/cakephp/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll! 123" /><published>2017-02-09T14:19:42-02:00</published><updated>2017-02-09T14:19:42-02:00</updated><id>http://localhost:4000/cakephp/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/cakephp/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated asda sda da sd asda dsa.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-13T00:28:55-02:00</updated><id>http://localhost:4000//</id><title type="html">João Pedro Alves - Desenvolvimento web PISTOLA!</title><subtitle>Artigos, tutoriais e dicas sobre desenvolvimento web</subtitle><entry><title type="html">print ‘Adeus Mundo!’;</title><link href="http://localhost:4000/bullshit/print-adeus-mundo.html" rel="alternate" type="text/html" title="print 'Adeus Mundo!';" /><published>2017-02-12T22:11:00-02:00</published><updated>2017-02-12T22:11:00-02:00</updated><id>http://localhost:4000/bullshit/print-adeus-mundo</id><content type="html" xml:base="http://localhost:4000/bullshit/print-adeus-mundo.html">&lt;p&gt;Não, nós não iremos começar com o já conhecido &lt;strong&gt;olá mundo&lt;/strong&gt;. Pelo contrário, aqui não terá espaço ele! &lt;em&gt;ou melhor, quase nunca, ok?&lt;/em&gt; Não entendeu nada? Relaxa, já te explico…&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;Arg… Antes de tudo, acho melhor me apresentar não é? Você precisa saber quem é o cara que fala tanta besteira.&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;h2 id=&quot;mas-quem-é-você-rapaz&quot;&gt;Mas quem é você rapaz?&lt;/h2&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;testando&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;algo&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$algo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;Eu sou o carinha da fotinha aqui de baixo &lt;strong&gt;↓&lt;/strong&gt;. Meu nome é &lt;strong&gt;João Pedro Alves&lt;/strong&gt;, tenho 22 anos, &lt;a href=&quot;https://pt.wikipedia.org/wiki/Petr%C3%B3polis&quot; target=&quot;_blank&quot;&gt;Petropolitano&lt;/a&gt; (porém morando e trabalhando em São Paulo) e sou &lt;strong&gt;fissurado&lt;/strong&gt; por desenvolvimento web. Como não ser, não é verdade?!&lt;/p&gt;
 
-	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Algo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$algo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;algo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$algo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;então-mais-um-blog&quot;&gt;Então, mais um blog?&lt;/h2&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated asda sda da sd asda dsa.</summary></entry></feed>
+&lt;p&gt;Eu acredito que o motivo principal por trás de uma criação de blog é sempre a passagem de conhecimento. E este é o meu principal motivo também porém vou ter um foco bem específico…&lt;/p&gt;
+
+&lt;p&gt;Hoje em dia são incontáveis os conteúdos introdutórios que existem por ai sobre diversas tecnologias &lt;em&gt;(excelente conteúdo por sinal)&lt;/em&gt;. Ao longo dos meus estudos sobre tecnologias conteúdos como &lt;strong&gt;introdução a…, primeiros passos em… e tutorial… para iniciantes&lt;/strong&gt; foram &lt;em&gt;impressindíveis&lt;/em&gt; para meu crescimento. Ou seja, a galera que está começando agora está muito bem servida!&lt;/p&gt;
+
+&lt;p&gt;Se você for um desenvolvedor um pouco mais experiente já deve ter notado uma certa &lt;em&gt;“carência”&lt;/em&gt; na discussão de assuntos mais complexos (e até problemas que enfrentamos no mundo real). Isso falando do cenário &lt;strong&gt;brasileiro&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sim, eu sei… Existem diversos fóruns e diversas pessoas que contribuem com assuntos mais complexos. Não quero desmerecer-las! Minha intenção é somar forças com elas! &lt;code class=&quot;highlighter-rouge&quot;&gt;;)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Então…&lt;/em&gt; É mais ou menos ai que pretendo me encaixar!&lt;/p&gt;
+
+&lt;h2 id=&quot;e-o-que-você-vai-encontrar-aqui&quot;&gt;E o que você vai encontrar aqui?&lt;/h2&gt;
+
+&lt;p&gt;Aqui vou estar falando de &lt;strong&gt;MUITA&lt;/strong&gt; coisa bacana do mundo web &lt;em&gt;(as coisas que eu acho bacana ao menos)&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Nessa sopa de letrinhas, pode por &lt;code class=&quot;highlighter-rouge&quot;&gt;CakePHP&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Laravel&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;NodeJS&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;React&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Angular&lt;/code&gt;, &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;coisas teóricas legais&lt;/code&gt;&lt;/strong&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;open-source&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;...&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Resumão:&lt;/strong&gt; Vou focar mais em assuntos um pouco mais complexos das ferramentas retratando situações do &lt;strong&gt;mundo real&lt;/strong&gt;. Vamos aplicar &lt;em&gt;(muitas vezes em projetos reais)&lt;/em&gt; toda essa bagaça e trocar experiências reais.&lt;/p&gt;
+
+&lt;p&gt;Talvez se você for iniciante poderá ficar um pouco perdido por aqui mas não é o fim do mundo! Como citei acima, existem milhares e milhares de conteúdos introdutórios sobre diversas tecnologias então você estará bem servido e poderá sempre dar uma passada aqui para trocar umas experiências do seu aprendizado &lt;code class=&quot;highlighter-rouge&quot;&gt;;)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;thats-all&quot;&gt;That’s all!&lt;/h2&gt;
+
+&lt;p&gt;Esse post é mais um conteúdo introdutório &lt;em&gt;(não é atoa que está na categoria &lt;strong&gt;bullshit&lt;/strong&gt;)&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Espero poder trocar boas experiências com a comunidade e passar algo relevante para o maior número de pessoas possíveis.&lt;/p&gt;
+
+&lt;p&gt;Até a próxima &lt;code class=&quot;highlighter-rouge&quot;&gt;ᕕ( ᐛ )ᕗ&lt;/code&gt;&lt;/p&gt;</content><category term="bullshit" /><summary type="html">Não, nós não iremos começar com o já conhecido olá mundo. Pelo contrário, aqui não terá espaço ele! ou melhor, quase nunca, ok? Não entendeu nada? Relaxa, já te explico…</summary></entry></feed>

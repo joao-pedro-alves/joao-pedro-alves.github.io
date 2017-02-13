@@ -16,6 +16,29 @@
 			}
 		}
 
+		img {
+			max-width: 100%;
+		}
+
+		ul {
+			margin-bottom: 20px;
+		}
+
+		p + ul {
+			margin-top: -15px;
+		}
+
+		h1, h2, h3, h4, h5 {
+			margin-top: 30px;
+			margin-bottom: 20px;
+			color: $main-color;
+			font-weight: bold;
+		}
+		
+		h2 {font-size: 1.294rem}
+
+		h3 {font-size: 1.176remrem}
+
 		time {
 			display: block;
 			margin-bottom: 20px;

@@ -7936,7 +7936,8 @@ button.close {
 #post-page h1, #post-page .post-author h1 {
   color: #D90000;
   margin-bottom: 20px;
-  font-size: 1.294rem; }
+  font-size: 1.294rem;
+  font-weight: bold; }
 
 html {
   font-size: 17px; }
@@ -8076,6 +8077,27 @@ time {
   margin-bottom: 20px; }
   #post-page .post-content p:last-child {
     margin-bottom: 0; }
+
+#post-page .post-content img {
+  max-width: 100%; }
+
+#post-page .post-content ul {
+  margin-bottom: 20px; }
+
+#post-page .post-content p + ul {
+  margin-top: -15px; }
+
+#post-page .post-content h1, #post-page .post-content h2, #post-page .post-content h3, #post-page .post-content h4, #post-page .post-content h5 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #D90000;
+  font-weight: bold; }
+
+#post-page .post-content h2 {
+  font-size: 1.294rem; }
+
+#post-page .post-content h3 {
+  font-size: 1.176remrem; }
 
 #post-page .post-content time {
   display: block;
