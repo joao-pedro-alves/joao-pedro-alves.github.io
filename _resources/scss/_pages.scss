@@ -44,6 +44,11 @@
 			margin-bottom: 20px;
 			text-align: right;
 		}
+
+		code.highlighter-rouge {
+			background-color: $main-color;
+			color: #fff;
+		}
 	}
 
 	.post-author {

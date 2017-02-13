@@ -8104,6 +8104,10 @@ time {
   margin-bottom: 20px;
   text-align: right; }
 
+#post-page .post-content code.highlighter-rouge {
+  background-color: #D90000;
+  color: #fff; }
+
 #post-page .post-author {
   display: block;
   margin-top: 40px;
