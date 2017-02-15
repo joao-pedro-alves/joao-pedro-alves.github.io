@@ -1,1 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-15T12:14:31-02:00</updated><id>http://localhost:4000//</id><title type="html">João Pedro Alves - Desenvolvimento web PISTOLA!</title><subtitle>Artigos, tutoriais e dicas sobre desenvolvimento web</subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-15T16:24:48-02:00</updated><id>http://localhost:4000//</id><title type="html">João Pedro Alves - Desenvolvimento web PISTOLA!</title><subtitle>Artigos, tutoriais e dicas sobre desenvolvimento web</subtitle><entry><title type="html">Post de teste sobre laravel</title><link href="http://localhost:4000/laravel/post-teste.html" rel="alternate" type="text/html" title="Post de teste sobre laravel" /><published>2017-02-12T12:11:00-02:00</published><updated>2017-02-12T12:11:00-02:00</updated><id>http://localhost:4000/laravel/post-teste</id><content type="html" xml:base="http://localhost:4000/laravel/post-teste.html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque dignissimos neque, numquam fugit vel rem sint quos qui officia autem harum, hic nemo tenetur, distinctio magni consequatur quam, saepe excepturi.&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi, voluptatum possimus magnam atque illo nostrum est earum non eius. Magni nihil nobis temporibus molestiae dignissimos reiciendis, ducimus beatae tenetur! &lt;code class=&quot;highlighter-rouge&quot;&gt;highlight1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;highlight2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;highlight3&lt;/code&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Test&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Pistola&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DB&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;db&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Viva Jaú&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/1/1d/Bandeira_de_Ja%C3%BA_(Atualizada).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><category term="laravel" /><summary type="html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque dignissimos neque, numquam fugit vel rem sint quos qui officia autem harum, hic nemo tenetur, distinctio magni consequatur quam, saepe excepturi.</summary></entry></feed>
