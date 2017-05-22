@@ -7,7 +7,7 @@
 
 Navegando pela web um dos erros mais comuns que você encontra relacionado a Laravel é o famoso: `sessions doesnt work` ou para o bom português `a porra da session está bugada!` 
 
-Eu mesmo já fui vítima desse problema. Nesse pequeno artigo estarei listando os duas **principais** causas desse problema.
+Eu mesmo já fui vítima desse problema. Nesse pequeno artigo estarei listando as duas **principais** causas desse problema.
 
 ## Necessário usar o middleware *web* (apenas laravel 5.2+)
 Na versão 5.2+ do laravel é necessário utilizar o middleware **web** em suas rotas para utilizar sessions.
