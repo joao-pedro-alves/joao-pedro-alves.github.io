@@ -25,7 +25,7 @@ Ou
 Route::group(['middleware' => ['web']], function() {	
 	Route::get('/', 'UsersController@dashboard');
 	Route::post('/login', 'UsersController@login');
-}
+})
 {% endhighlight %}
 
 
