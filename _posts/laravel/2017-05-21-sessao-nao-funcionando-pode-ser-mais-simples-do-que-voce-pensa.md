@@ -5,7 +5,7 @@
  categories: laravel
 ---
 
-Navegando pela web um dos erros mais comuns que você encontra relacionado a Laravel é o famosso: `sessions doesnt work` ou para o bom português `a porra da session está bugada!` 
+Navegando pela web um dos erros mais comuns que você encontra relacionado a Laravel é o famoso: `sessions doesnt work` ou para o bom português `a porra da session está bugada!` 
 
 Eu mesmo já fui vítima desse problema. Nesse pequeno artigo estarei listando os duas **principais** causas desse problema.
 
