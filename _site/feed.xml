@@ -1,30 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-15T16:24:48-02:00</updated><id>http://localhost:4000//</id><title type="html">João Pedro Alves - Desenvolvimento web PISTOLA!</title><subtitle>Artigos, tutoriais e dicas sobre desenvolvimento web</subtitle><entry><title type="html">Post de teste sobre laravel</title><link href="http://localhost:4000/laravel/post-teste.html" rel="alternate" type="text/html" title="Post de teste sobre laravel" /><published>2017-02-12T12:11:00-02:00</published><updated>2017-02-12T12:11:00-02:00</updated><id>http://localhost:4000/laravel/post-teste</id><content type="html" xml:base="http://localhost:4000/laravel/post-teste.html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque dignissimos neque, numquam fugit vel rem sint quos qui officia autem harum, hic nemo tenetur, distinctio magni consequatur quam, saepe excepturi.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-05-21T22:13:31-03:00</updated><id>http://localhost:4000//</id><title type="html">João Pedro Alves - Desenvolvimento web PISTOLA!</title><subtitle>Artigos, tutoriais e dicas sobre desenvolvimento web</subtitle><entry><title type="html">Sessões não funcionando: pode ser mais simples do que você pensa!</title><link href="http://localhost:4000/laravel/sessao-nao-funcionando-pode-ser-mais-simples-do-que-voce-pensa.html" rel="alternate" type="text/html" title="Sessões não funcionando: pode ser mais simples do que você pensa!" /><published>2017-05-21T21:34:00-03:00</published><updated>2017-05-21T21:34:00-03:00</updated><id>http://localhost:4000/laravel/sessao-nao-funcionando-pode-ser-mais-simples-do-que-voce-pensa</id><content type="html" xml:base="http://localhost:4000/laravel/sessao-nao-funcionando-pode-ser-mais-simples-do-que-voce-pensa.html">&lt;p&gt;Navegando pela web um dos erros mais comuns que você encontra relacionado a Laravel é o famosso: &lt;code class=&quot;highlighter-rouge&quot;&gt;sessions doesnt work&lt;/code&gt; ou para o bom português &lt;code class=&quot;highlighter-rouge&quot;&gt;a porra da session está bugada!&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi, voluptatum possimus magnam atque illo nostrum est earum non eius. Magni nihil nobis temporibus molestiae dignissimos reiciendis, ducimus beatae tenetur! &lt;code class=&quot;highlighter-rouge&quot;&gt;highlight1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;highlight2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;highlight3&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Eu mesmo já fui vítima desse problema. Nesse pequeno artigo estarei listando os duas &lt;strong&gt;principais&lt;/strong&gt; causas desse problema.&lt;/p&gt;
+
+&lt;h2 id=&quot;necessário-usar-o-middleware-web-apenas-laravel-52&quot;&gt;Necessário usar o middleware &lt;em&gt;web&lt;/em&gt; (apenas laravel 5.2+)&lt;/h2&gt;
+&lt;p&gt;Na versão 5.2+ do laravel é necessário utilizar o middleware &lt;strong&gt;web&lt;/strong&gt; em suas rotas para utilizar sessions.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Route&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'UsersController@dashboard'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;middleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'web'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Route&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/login'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'UsersController@login'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;middleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'web'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Ou&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
-5
-6
-7
-8
-9
-10&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Test&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Pistola&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DB&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;db&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Route&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'middleware'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'web'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;	
+	&lt;span class=&quot;nx&quot;&gt;Route&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'UsersController@dashboard'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;Route&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/login'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'UsersController@login'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
+&lt;h2 id=&quot;existe-um-erro-na-criação-da-session&quot;&gt;Existe um erro na criação da session&lt;/h2&gt;
+&lt;p&gt;Esse problema pode passar despercebido. Se acontecer um erro ao utilizar um método da session (como o &lt;strong&gt;put&lt;/strong&gt;) a mensagem de erro pode não aparecer na página e apenas ficar disponível do &lt;strong&gt;log (app/storage/logs)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Um exemplo: se você tentar armazenar um objeto não permitido pela função &lt;a href=&quot;http://php.net/manual/en/function.serialize.php&quot;&gt;serialize (que é utilizada intermente pelo laravel)&lt;/a&gt; ocorrerá um erro que &lt;strong&gt;só será mostrado no log&lt;/strong&gt;. O erro será algo como:&lt;/p&gt;
+
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Viva Jaú&lt;/em&gt;&lt;/p&gt;
+  &lt;p&gt;local.ERROR: Exception: Serialization of ‘Symfony\Component\HttpFoundation\File\UploadedFile’ is not allowed in …&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/1/1d/Bandeira_de_Ja%C3%BA_(Atualizada).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><category term="laravel" /><summary type="html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque dignissimos neque, numquam fugit vel rem sint quos qui officia autem harum, hic nemo tenetur, distinctio magni consequatur quam, saepe excepturi.</summary></entry></feed>
+&lt;p&gt;Nesse caso eu estarei tentando armazenar todos os dados de um request dentro de uma session levando em conta que um dos campos é do tipo &lt;em&gt;file&lt;/em&gt;, ou seja, um carregamento de arquivo.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'foo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Sendo um pouco mais técnico, o Laravel converte para objeto do tipo &lt;em&gt;UploadedFile&lt;/em&gt; todo o campo &lt;em&gt;file&lt;/em&gt; enviado por requisição para melhor manuseio internamento. Pois bem, você não pode salvar esse objeto&lt;/p&gt;
+
+&lt;p&gt;A solução varia da sua necessidade. A solução mais rápida é simplesmente remover do array de armazenamento o índice que contem o objeto que não é permitido.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;A dica é: &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;na dúvida sempre olhe os logs!&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Essa é a dica de hoje! Até a próxima!&lt;/p&gt;</content><summary type="html">Navegando pela web um dos erros mais comuns que você encontra relacionado a Laravel é o famosso: sessions doesnt work ou para o bom português a porra da session está bugada!</summary></entry></feed>

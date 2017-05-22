@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="http://localhost:4000/assets/css/app.min.css?2" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Sessões não funcionando: pode ser mais simples do que você pensa! | João Pedro Alves - Desenvolvimento web PISTOLA!</title>
+	<meta name="description" content="Artigos, tutoriais e dicas sobre desenvolvimento web" />
+</head>
+<body>
+	<div class="global-wrap">
+		<header id="global-header">
+			<div class="top-head">
+				<a class="site-url" href="http://localhost:4000">
+					<span class="title-name"><span class="transp">print</span> <h1>joão pedro alves</h1> <span class="transp">;</span></span>
+				</a>
+			</div>
+			<div class="bottom-head">
+				<h2>desenvolvimento web <b>pistola!</b></h2>
+			</div>
+			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<i class="alone-border"></i>
+			</div>
+		</header>
+		<div id="global-content">
+<main id="post-page">
+	<div class="container-fluid">
+		<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<time datetime="21 May 2017">21 May 2017</time>
+			<h1>Sessões não funcionando: pode ser mais simples do que você pensa!</h1>
+			<section class="post-content"><p>Navegando pela web um dos erros mais comuns que você encontra relacionado a Laravel é o famosso: <code class="highlighter-rouge">sessions doesnt work</code> ou para o bom português <code class="highlighter-rouge">a porra da session está bugada!</code></p>
+
+<p>Eu mesmo já fui vítima desse problema. Nesse pequeno artigo estarei listando os duas <strong>principais</strong> causas desse problema.</p>
+
+<h2 id="necessário-usar-o-middleware-web-apenas-laravel-52">Necessário usar o middleware <em>web</em> (apenas laravel 5.2+)</h2>
+<p>Na versão 5.2+ do laravel é necessário utilizar o middleware <strong>web</strong> em suas rotas para utilizar sessions.</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="cp">&lt;?php</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">post</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'UsersController@dashboard'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">middleware</span><span class="p">(</span><span class="s1">'web'</span><span class="p">);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">post</span><span class="p">(</span><span class="s1">'/login'</span><span class="p">,</span> <span class="s1">'UsersController@login'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">middleware</span><span class="p">(</span><span class="s1">'web'</span><span class="p">);</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Ou</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="cp">&lt;?php</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">group</span><span class="p">([</span><span class="s1">'middleware'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'web'</span><span class="p">]],</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>	
+	<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'UsersController@dashboard'</span><span class="p">);</span>
+	<span class="nx">Route</span><span class="o">::</span><span class="na">post</span><span class="p">(</span><span class="s1">'/login'</span><span class="p">,</span> <span class="s1">'UsersController@login'</span><span class="p">);</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="existe-um-erro-na-criação-da-session">Existe um erro na criação da session</h2>
+<p>Esse problema pode passar despercebido. Se acontecer um erro ao utilizar um método da session (como o <strong>put</strong>) a mensagem de erro pode não aparecer na página e apenas ficar disponível do <strong>log (app/storage/logs)</strong>.</p>
+
+<p>Um exemplo: se você tentar armazenar um objeto não permitido pela função <a href="http://php.net/manual/en/function.serialize.php">serialize (que é utilizada intermente pelo laravel)</a> ocorrerá um erro que <strong>só será mostrado no log</strong>. O erro será algo como:</p>
+
+<blockquote>
+  <p>local.ERROR: Exception: Serialization of ‘Symfony\Component\HttpFoundation\File\UploadedFile’ is not allowed in …</p>
+</blockquote>
+
+<p>Nesse caso eu estarei tentando armazenar todos os dados de um request dentro de uma session levando em conta que um dos campos é do tipo <em>file</em>, ou seja, um carregamento de arquivo.</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="cp">&lt;?php</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">session</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">put</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">all</span><span class="p">());</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Sendo um pouco mais técnico, o Laravel converte para objeto do tipo <em>UploadedFile</em> todo o campo <em>file</em> enviado por requisição para melhor manuseio internamento. Pois bem, você não pode salvar esse objeto</p>
+
+<p>A solução varia da sua necessidade. A solução mais rápida é simplesmente remover do array de armazenamento o índice que contem o objeto que não é permitido.</p>
+
+<hr />
+
+<p>A dica é: <strong><code class="highlighter-rouge">na dúvida sempre olhe os logs!</code></strong></p>
+
+<hr />
+
+<p>Essa é a dica de hoje! Até a próxima!</p>
+</section>
+		</div>
+	</div>
+	<section class="post-author">
+		<figure>
+			<img src="http://localhost:4000/assets/img/joao-pedro-alves-photo.png" alt="João Pedro Alves" />
+		</figure>
+		<h1>João Pedro Alves</h1>
+		<p>Desenvolvedor <b>FISSURADO</b> web</p>
+		<p>Atualmente membro mais <u>pistola</u> do time <a href="https://primepass.club" target="_blank">Primepass</a>!</p>
+	</section>
+	<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+		<section class="comments-box">
+			<div id="disqus_thread"></div>
+			<script>
+			/**
+			*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+			*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+			
+			var disqus_config = function () {
+				this.page.url = 'http://localhost:4000/laravel/sessao-nao-funcionando-pode-ser-mais-simples-do-que-voce-pensa.html';
+				this.page.identifier = '/laravel/sessao-nao-funcionando-pode-ser-mais-simples-do-que-voce-pensa';
+				this.page.title = "Sessões não funcionando: pode ser mais simples do que você pensa!";
+			};
+			
+			(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//joaopedroalves.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                  
+		</section>
+	</div>
+</main>
+		</div>
+		<footer id="global-footer">
+			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<div class="footer-content">
+					<small>Desenvolvido em <a href="http://jekyllrb.com" target="_blank">Jekyll</a> e hospedado com <i class="fa fa-heart"></i> no <a href="http://github.com/joao-pedro-alves/joao-pedro-alves.github.io" target="_blank">Github</small>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="http://localhost:4000/assets/js/app.min.js"></script>
+</body>
+</html>
