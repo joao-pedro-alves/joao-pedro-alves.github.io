@@ -30,7 +30,7 @@ Route::group(['middleware' => ['web']], function() {
 
 
 ## Existe um erro na criação da session
-Esse problema pode passar despercebido. Se acontecer um erro ao utilizar um método da session (como o **put**) a mensagem de erro pode não aparecer na página e apenas ficar disponível do **log (app/storage/logs)**.
+Esse problema pode passar despercebido. Se acontecer um erro ao utilizar um método da session (como o **put**) a mensagem de erro pode não aparecer na página e apenas ficar disponível no **log (app/storage/logs)**.
 
 Um exemplo: se você tentar armazenar um objeto não permitido pela função [serialize (que é utilizada intermente pelo laravel)](http://php.net/manual/en/function.serialize.php) ocorrerá um erro que **só será mostrado no log**. O erro será algo como:
 
@@ -49,7 +49,7 @@ A solução varia da sua necessidade. A solução mais rápida é simplesmente r
 
 ---
 
-A dica é: **`na dúvida sempre olhe os logs!`**
+O segredo é: **`na dúvida sempre olhe os logs!`**
 
 ---
 
