@@ -5,7 +5,7 @@
 		font-size: 1.647rem;
 	}
 
-	.post-content {
+	.post-content, .main-article {
 		@extend %box-default;
 
 		p {

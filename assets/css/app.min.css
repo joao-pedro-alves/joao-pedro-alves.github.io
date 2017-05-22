@@ -7928,7 +7928,7 @@ button.close {
   border: 0;
   margin-bottom: 0; }
 
-.main-article, #post-page .post-content {
+.main-article, #post-page .post-content, #post-page .main-article {
   padding: 20px;
   background-color: #fff;
   border: 1px solid #E5E5E5; }
@@ -8073,38 +8073,38 @@ time {
   margin-bottom: 20px;
   font-size: 1.647rem; }
 
-#post-page .post-content p {
+#post-page .post-content p, #post-page .main-article p {
   margin-bottom: 20px; }
-  #post-page .post-content p:last-child {
+  #post-page .post-content p:last-child, #post-page .main-article p:last-child {
     margin-bottom: 0; }
 
-#post-page .post-content img {
+#post-page .post-content img, #post-page .main-article img {
   max-width: 100%; }
 
-#post-page .post-content ul {
+#post-page .post-content ul, #post-page .main-article ul {
   margin-bottom: 20px; }
 
-#post-page .post-content p + ul {
+#post-page .post-content p + ul, #post-page .main-article p + ul {
   margin-top: -15px; }
 
-#post-page .post-content h1, #post-page .post-content h2, #post-page .post-content h3, #post-page .post-content h4, #post-page .post-content h5 {
+#post-page .post-content h1, #post-page .post-content h2, #post-page .post-content h3, #post-page .post-content h4, #post-page .post-content h5, #post-page .main-article h1, #post-page .main-article h2, #post-page .main-article h3, #post-page .main-article h4, #post-page .main-article h5 {
   margin-top: 30px;
   margin-bottom: 20px;
   color: #D90000;
   font-weight: bold; }
 
-#post-page .post-content h2 {
+#post-page .post-content h2, #post-page .main-article h2 {
   font-size: 1.294rem; }
 
-#post-page .post-content h3 {
+#post-page .post-content h3, #post-page .main-article h3 {
   font-size: 1.176remrem; }
 
-#post-page .post-content time {
+#post-page .post-content time, #post-page .main-article time {
   display: block;
   margin-bottom: 20px;
   text-align: right; }
 
-#post-page .post-content code.highlighter-rouge {
+#post-page .post-content code.highlighter-rouge, #post-page .main-article code.highlighter-rouge {
   background-color: #D90000;
   color: #fff; }
 

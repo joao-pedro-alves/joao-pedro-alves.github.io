@@ -29,9 +29,9 @@
 		<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 				<time datetime="21 May 2017">21 May 2017</time>
 			<h1>Sessões não funcionando: pode ser mais simples do que você pensa!</h1>
-			<section class="post-content"><p>Navegando pela web um dos erros mais comuns que você encontra relacionado a Laravel é o famosso: <code class="highlighter-rouge">sessions doesnt work</code> ou para o bom português <code class="highlighter-rouge">a porra da session está bugada!</code></p>
+			<section class="post-content"><p>Navegando pela web um dos erros mais comuns que você encontra relacionado a Laravel é o famoso: <code class="highlighter-rouge">sessions doesnt work</code> ou para o bom português <code class="highlighter-rouge">a porra da session está bugada!</code></p>
 
-<p>Eu mesmo já fui vítima desse problema. Nesse pequeno artigo estarei listando os duas <strong>principais</strong> causas desse problema.</p>
+<p>Eu mesmo já fui vítima desse problema. Nesse pequeno artigo estarei listando as duas <strong>principais</strong> causas desse problema.</p>
 
 <h2 id="necessário-usar-o-middleware-web-apenas-laravel-52">Necessário usar o middleware <em>web</em> (apenas laravel 5.2+)</h2>
 <p>Na versão 5.2+ do laravel é necessário utilizar o middleware <strong>web</strong> em suas rotas para utilizar sessions.</p>
@@ -53,11 +53,11 @@
 <span class="nx">Route</span><span class="o">::</span><span class="na">group</span><span class="p">([</span><span class="s1">'middleware'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'web'</span><span class="p">]],</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>	
 	<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'UsersController@dashboard'</span><span class="p">);</span>
 	<span class="nx">Route</span><span class="o">::</span><span class="na">post</span><span class="p">(</span><span class="s1">'/login'</span><span class="p">,</span> <span class="s1">'UsersController@login'</span><span class="p">);</span>
-<span class="p">}</span><span class="w">
+<span class="p">})</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h2 id="existe-um-erro-na-criação-da-session">Existe um erro na criação da session</h2>
-<p>Esse problema pode passar despercebido. Se acontecer um erro ao utilizar um método da session (como o <strong>put</strong>) a mensagem de erro pode não aparecer na página e apenas ficar disponível do <strong>log (app/storage/logs)</strong>.</p>
+<p>Esse problema pode passar despercebido. Se acontecer um erro ao utilizar um método da session (como o <strong>put</strong>) a mensagem de erro pode não aparecer na página e apenas ficar disponível no <strong>log (app/storage/logs)</strong>.</p>
 
 <p>Um exemplo: se você tentar armazenar um objeto não permitido pela função <a href="http://php.net/manual/en/function.serialize.php">serialize (que é utilizada intermente pelo laravel)</a> ocorrerá um erro que <strong>só será mostrado no log</strong>. O erro será algo como:</p>
 
@@ -78,7 +78,7 @@
 
 <hr />
 
-<p>A dica é: <strong><code class="highlighter-rouge">na dúvida sempre olhe os logs!</code></strong></p>
+<p>O segredo é: <strong><code class="highlighter-rouge">na dúvida sempre olhe os logs!</code></strong></p>
 
 <hr />
 
