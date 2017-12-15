@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="http://localhost:4000/assets/css/app.min.css?2" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>O que é Server-side e Client-Side rendering | João Pedro Alves - Desenvolvimento web PISTOLA!</title>
+	<meta name="description" content="Artigos, tutoriais e dicas sobre desenvolvimento web" />
+</head>
+<body>
+	<div class="global-wrap">
+		<header id="global-header">
+			<div class="top-head">
+				<a class="site-url" href="http://localhost:4000">
+					<span class="title-name"><span class="transp">print</span> <h1>joão pedro alves</h1> <span class="transp">;</span></span>
+				</a>
+			</div>
+			<div class="bottom-head">
+				<h2>desenvolvimento web <b>pistola!</b></h2>
+			</div>
+			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<i class="alone-border"></i>
+			</div>
+		</header>
+		<div id="global-content">
+<main id="post-page">
+	<div class="container-fluid">
+		<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+				<time datetime="15 December 2017">15 December 2017</time>
+			<h1>O que é Server-side e Client-Side rendering</h1>
+			<section class="post-content"><p>A primeira vez que ouvi o termo “aplicação <em>server-side rendering</em>” me fez imaginar uma aplicação que de algum jeito renderizava o conteúdo no servidor, fazendo o trabalho do browser, e enviava de alguma forma o conteúdo renderizado para o browser (foda-se a lógica). Como você pode imagina, não é bem por ai…</p>
+
+<h2 id="o-conceito">O conceito</h2>
+<p>Na verdade a palavra <strong>rendering</strong>, nesse caso, não remete a renderização propriamente dita, como por exemplo, uma <em>div</em> sendo estilizada. O <em>rendering</em> diz respeito a <strong><code class="highlighter-rouge">obter informações dos elementos da página</code></strong>.</p>
+
+<p>Em outras palavras, no <strong>server-side rendering</strong> o servidor é responsável por enviar essas informações direto para o navegador enquanto o <strong>client-side rendering</strong> o próprio client (navegador) monta essa estrutura (normalmente através de <em>Javascript</em>). Lets dive into it.</p>
+
+<h2 id="server-side-rendering">Server-side rendering</h2>
+<p>Lembra aquele primeiro site que você fez em <em>PHP</em>, que você colocava seu <em>HTML</em> dentro da syntax do <strong>PHP</strong> e achava incrível utilizar <em>ifs</em> para mostrar o <em>HTML</em> que queria? Então, esse é um exemplo clássico de <strong>server-side rendering</strong></p>
+
+<p>Acompanhe o fluxo de requisição HTTP abaixo:</p>
+
+<p><img src="http://betterexplained.com/wp-content/uploads/compression/HTTP_request.png" alt="HTTP Request Flow" /></p>
+
+<p>Simplificando ainda mais, o seu <strong>navegador</strong> requisita para o <strong>servidor</strong> as <strong>informações da página</strong>. Uma vez processado pelo servidor, ele devolve a resposta para o navegador. Essa resposta geralmente costuma ser nosso <strong>HTML</strong>.</p>
+
+<p>Nesse caso as informações da página (seu conteúdo/elementos) foram disponibilizadas pelo <strong>servidor</strong>, ou seja, ocorreu um <strong>server-side rendering</strong>.</p>
+
+<p>Nessa situação seu navegador ficará em modo de <em>espera</em> aguardando uma resposta do servidor, ou seja, você não poderá interagir com a página enquanto o servidor não enviar essa resposta para o navegador.</p>
+
+<p><strong>PRÓS:</strong></p>
+
+<ul>
+  <li>
+    <p>Os mecanismos de buscam podem facilmente obter as informações do seu site, sendo melhor para SEO.</p>
+  </li>
+  <li>
+    <p>A página inicial tem o carregamento mais rápido.</p>
+  </li>
+  <li>
+    <p>Excelente para sites estáticos.</p>
+  </li>
+</ul>
+
+<p><strong>CONTRAS:</strong></p>
+
+<ul>
+  <li>Requisições frequentes para o servidor.</li>
+  <li>Uma média de renderizações lentas.</li>
+  <li>Páginas inteiras recarregadas.</li>
+  <li>Uma interação não tão rica com o site.</li>
+</ul>
+
+<h2 id="client-side-rendering">Client-Side rendering</h2>
+<p>Client-side rendering é sobre carregar o conteúdo do site dentro do próprio navegador utilizando <strong>Javascript</strong> então invés de carregar a página inteira cada vez que você mudar de página, com essa abordagem você pode carregar <strong>algumas partes</strong> em específicos.</p>
+
+<p>Em outras palavras, você estará renderizando de forma dinâmica o HTML através do Javascript.</p>
+
+<p>Ainda sim será necessário fazer uma requisição para o servidor para o navegador carregar sua estrutur HTML inicial e seus arquivos Javascript.</p>
+
+<p>Segue um exemplo onde estou utilizando um código em AngularJS (framework Javascript) que é responsável por renderizar o conteúdo do meu site direto no navegador, ou seja, <strong>client-side rendering</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></td><td class="code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Clietn-Side rendering<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body</span> <span class="na">ng-app=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">root</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'app'</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">'root'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="na">restrict</span><span class="p">:</span> <span class="s1">'A'</span><span class="p">,</span>
+        <span class="na">template</span><span class="p">:</span> <span class="s1">'&lt;h1&gt;client-side rendering&lt;/h1&gt;'</span>
+      <span class="p">}</span> 
+    <span class="p">})</span>
+  <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Será gerado um texto simples como:</p>
+
+<p><img src="https://i.imgur.com/yfHc5cB.png" alt="" /></p>
+
+<p>Como essa renderização está sendo feita no navegador, o site não fica <em>“travado”</em> esperando uma resposta do servidor. Enquanto um conteúdo específico carrega, o usuário pode interagir com o mesmo sem problemas.</p>
+
+<p><strong>Um ponto importante:</strong> uma vez que você estará gerando HTML através do Javascript, os BOTs dos mecanismos de busca não conseguirão identificar seu conteúdo pois ele estará praticamente todo contido em seu arquivo Javascript então é preciso tomar cuidado no que diz respeito a <strong>SEO</strong> nessa abordagem.</p>
+
+<p><strong>PROS:</strong></p>
+
+<ul>
+  <li>Uma interação muito mais rica com o site.</li>
+  <li>Rápida renderização do site após o carregamento inicial.</li>
+  <li>Excelente para aplicações web.</li>
+  <li>Uma robusta seleção de bibliotecas em Javascript dão suporte.</li>
+</ul>
+
+<p><strong>CONTRA:</strong></p>
+
+<ul>
+  <li>Problemas com SEO caso não seja implementado corretamente.</li>
+  <li>O carregamento inicial pode demorar um pouco mais.</li>
+  <li>Na grande maioria dos casos será necessário uma biblioteca externa.</li>
+</ul>
+
+<p>Como em quase tudo relacionado a tecnologia não existe <strong>“o melhor”</strong>. Você como desenvolvedor deve usar o bom senso e conhecimento para entender os prós e contras das abordagens e escolher o melhor para sua aplicação.</p>
+
+<p>Até a pŕoxima! <strong><code class="highlighter-rouge">:P</code></strong></p>
+</section>
+		</div>
+	</div>
+	<section class="post-author">
+		<figure>
+			<img src="http://localhost:4000/assets/img/joao-pedro-alves-photo.png" alt="João Pedro Alves" />
+		</figure>
+		<h1>João Pedro Alves</h1>
+		<p>Desenvolvedor web <b>APAIXONADO</b></p>
+		<p>
+			<img width="30" src="https://sheepy85.files.wordpress.com/2015/02/laravel_logo-circle-tp-xs.png?w=150g">
+			<img width="30" src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg">
+			<img width="30" src="http://ecodile.com/wp-content/uploads/2015/10/ionic.png">
+			<img width="30" src="https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png">
+		</p>
+	</section>
+	<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+		<section class="comments-box">
+			<div id="disqus_thread"></div>
+			<script>
+			/**
+			*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+			*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+			
+			var disqus_config = function () {
+				this.page.url = 'http://localhost:4000/web/o-que-e-server-side-e-client-side-rendering.html';
+				this.page.identifier = '/web/o-que-e-server-side-e-client-side-rendering';
+				this.page.title = "O que é Server-side e Client-Side rendering";
+			};
+			
+			(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//joaopedroalves.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                  
+		</section>
+	</div>
+</main>
+		</div>
+		<footer id="global-footer">
+			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<div class="footer-content">
+					<small>Desenvolvido em <a href="http://jekyllrb.com" target="_blank">Jekyll</a> e hospedado com <i class="fa fa-heart"></i> no <a href="http://github.com/joao-pedro-alves/joao-pedro-alves.github.io" target="_blank">Github</small>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="http://localhost:4000/assets/js/app.min.js"></script>
+</body>
+</html>

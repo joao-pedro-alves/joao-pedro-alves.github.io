@@ -8047,6 +8047,9 @@ time {
       .main-article .article-icon img.laravel {
         bottom: 15px;
         left: 10px; }
+      .main-article .article-icon img.web {
+        bottom: 16px;
+        left: 12px; }
       .main-article .article-icon img.cakephp {
         bottom: 15px;
         left: 13px; }

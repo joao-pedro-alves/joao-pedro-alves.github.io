@@ -1,4 +1,122 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-29T02:22:44-02:00</updated><id>http://localhost:4000//</id><title type="html">João Pedro Alves - Desenvolvimento web PISTOLA!</title><subtitle>Artigos, tutoriais e dicas sobre desenvolvimento web</subtitle><entry><title type="html">Página de erro customizada com controller</title><link href="http://localhost:4000/laravel/pagina-de-erro-customizada-com-controller.html" rel="alternate" type="text/html" title="Página de erro customizada com controller" /><published>2017-05-22T20:06:00-03:00</published><updated>2017-05-22T20:06:00-03:00</updated><id>http://localhost:4000/laravel/pagina-de-erro-customizada-com-controller</id><content type="html" xml:base="http://localhost:4000/laravel/pagina-de-erro-customizada-com-controller.html">&lt;p&gt;O Laravel permite você de forma rápida criar páginas &lt;em&gt;estáticas&lt;/em&gt; de erro, como por exemplo para erros 500 e 404, porém essa abordagem funciona bem quando você apenas precisa por um conteúdo &lt;strong&gt;estático&lt;/strong&gt;. Como proceder em um caso que é necessário que um &lt;strong&gt;controller&lt;/strong&gt; seja chamado em uma dessas páginas de erro?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-12-15T16:23:55-02:00</updated><id>http://localhost:4000//</id><title type="html">João Pedro Alves - Desenvolvimento web PISTOLA!</title><subtitle>Artigos, tutoriais e dicas sobre desenvolvimento web</subtitle><entry><title type="html">O que é Server-side e Client-Side rendering</title><link href="http://localhost:4000/web/o-que-e-server-side-e-client-side-rendering.html" rel="alternate" type="text/html" title="O que é Server-side e Client-Side rendering" /><published>2017-12-15T15:12:00-02:00</published><updated>2017-12-15T15:12:00-02:00</updated><id>http://localhost:4000/web/o-que-e-server-side-e-client-side-rendering</id><content type="html" xml:base="http://localhost:4000/web/o-que-e-server-side-e-client-side-rendering.html">&lt;p&gt;A primeira vez que ouvi o termo “aplicação &lt;em&gt;server-side rendering&lt;/em&gt;” me fez imaginar uma aplicação que de algum jeito renderizava o conteúdo no servidor, fazendo o trabalho do browser, e enviava de alguma forma o conteúdo renderizado para o browser (foda-se a lógica). Como você pode imagina, não é bem por ai…&lt;/p&gt;
+
+&lt;h2 id=&quot;o-conceito&quot;&gt;O conceito&lt;/h2&gt;
+&lt;p&gt;Na verdade a palavra &lt;strong&gt;rendering&lt;/strong&gt;, nesse caso, não remete a renderização propriamente dita, como por exemplo, uma &lt;em&gt;div&lt;/em&gt; sendo estilizada. O &lt;em&gt;rendering&lt;/em&gt; diz respeito a &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;obter informações dos elementos da página&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Em outras palavras, no &lt;strong&gt;server-side rendering&lt;/strong&gt; o servidor é responsável por enviar essas informações direto para o navegador enquanto o &lt;strong&gt;client-side rendering&lt;/strong&gt; o próprio client (navegador) monta essa estrutura (normalmente através de &lt;em&gt;Javascript&lt;/em&gt;). Lets dive into it.&lt;/p&gt;
+
+&lt;h2 id=&quot;server-side-rendering&quot;&gt;Server-side rendering&lt;/h2&gt;
+&lt;p&gt;Lembra aquele primeiro site que você fez em &lt;em&gt;PHP&lt;/em&gt;, que você colocava seu &lt;em&gt;HTML&lt;/em&gt; dentro da syntax do &lt;strong&gt;PHP&lt;/strong&gt; e achava incrível utilizar &lt;em&gt;ifs&lt;/em&gt; para mostrar o &lt;em&gt;HTML&lt;/em&gt; que queria? Então, esse é um exemplo clássico de &lt;strong&gt;server-side rendering&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Acompanhe o fluxo de requisição HTTP abaixo:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://betterexplained.com/wp-content/uploads/compression/HTTP_request.png&quot; alt=&quot;HTTP Request Flow&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Simplificando ainda mais, o seu &lt;strong&gt;navegador&lt;/strong&gt; requisita para o &lt;strong&gt;servidor&lt;/strong&gt; as &lt;strong&gt;informações da página&lt;/strong&gt;. Uma vez processado pelo servidor, ele devolve a resposta para o navegador. Essa resposta geralmente costuma ser nosso &lt;strong&gt;HTML&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Nesse caso as informações da página (seu conteúdo/elementos) foram disponibilizadas pelo &lt;strong&gt;servidor&lt;/strong&gt;, ou seja, ocorreu um &lt;strong&gt;server-side rendering&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Nessa situação seu navegador ficará em modo de &lt;em&gt;espera&lt;/em&gt; aguardando uma resposta do servidor, ou seja, você não poderá interagir com a página enquanto o servidor não enviar essa resposta para o navegador.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PRÓS:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Os mecanismos de buscam podem facilmente obter as informações do seu site, sendo melhor para SEO.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A página inicial tem o carregamento mais rápido.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Excelente para sites estáticos.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONTRAS:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Requisições frequentes para o servidor.&lt;/li&gt;
+  &lt;li&gt;Uma média de renderizações lentas.&lt;/li&gt;
+  &lt;li&gt;Páginas inteiras recarregadas.&lt;/li&gt;
+  &lt;li&gt;Uma interação não tão rica com o site.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;client-side-rendering&quot;&gt;Client-Side rendering&lt;/h2&gt;
+&lt;p&gt;Client-side rendering é sobre carregar o conteúdo do site dentro do próprio navegador utilizando &lt;strong&gt;Javascript&lt;/strong&gt; então invés de carregar a página inteira cada vez que você mudar de página, com essa abordagem você pode carregar &lt;strong&gt;algumas partes&lt;/strong&gt; em específicos.&lt;/p&gt;
+
+&lt;p&gt;Em outras palavras, você estará renderizando de forma dinâmica o HTML através do Javascript.&lt;/p&gt;
+
+&lt;p&gt;Ainda sim será necessário fazer uma requisição para o servidor para o navegador carregar sua estrutur HTML inicial e seus arquivos Javascript.&lt;/p&gt;
+
+&lt;p&gt;Segue um exemplo onde estou utilizando um código em AngularJS (framework Javascript) que é responsável por renderizar o conteúdo do meu site direto no navegador, ou seja, &lt;strong&gt;client-side rendering&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Clietn-Side rendering&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ng-app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;app&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;directive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'root'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;restrict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;h1&amp;gt;client-side rendering&amp;lt;/h1&amp;gt;'&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Será gerado um texto simples como:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/yfHc5cB.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Como essa renderização está sendo feita no navegador, o site não fica &lt;em&gt;“travado”&lt;/em&gt; esperando uma resposta do servidor. Enquanto um conteúdo específico carrega, o usuário pode interagir com o mesmo sem problemas.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Um ponto importante:&lt;/strong&gt; uma vez que você estará gerando HTML através do Javascript, os BOTs dos mecanismos de busca não conseguirão identificar seu conteúdo pois ele estará praticamente todo contido em seu arquivo Javascript então é preciso tomar cuidado no que diz respeito a &lt;strong&gt;SEO&lt;/strong&gt; nessa abordagem.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PROS:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Uma interação muito mais rica com o site.&lt;/li&gt;
+  &lt;li&gt;Rápida renderização do site após o carregamento inicial.&lt;/li&gt;
+  &lt;li&gt;Excelente para aplicações web.&lt;/li&gt;
+  &lt;li&gt;Uma robusta seleção de bibliotecas em Javascript dão suporte.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONTRA:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Problemas com SEO caso não seja implementado corretamente.&lt;/li&gt;
+  &lt;li&gt;O carregamento inicial pode demorar um pouco mais.&lt;/li&gt;
+  &lt;li&gt;Na grande maioria dos casos será necessário uma biblioteca externa.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Como em quase tudo relacionado a tecnologia não existe &lt;strong&gt;“o melhor”&lt;/strong&gt;. Você como desenvolvedor deve usar o bom senso e conhecimento para entender os prós e contras das abordagens e escolher o melhor para sua aplicação.&lt;/p&gt;
+
+&lt;p&gt;Até a pŕoxima! &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:P&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;</content><summary type="html">A primeira vez que ouvi o termo “aplicação server-side rendering” me fez imaginar uma aplicação que de algum jeito renderizava o conteúdo no servidor, fazendo o trabalho do browser, e enviava de alguma forma o conteúdo renderizado para o browser (foda-se a lógica). Como você pode imagina, não é bem por ai…</summary></entry><entry><title type="html">Página de erro customizada com controller</title><link href="http://localhost:4000/laravel/pagina-de-erro-customizada-com-controller.html" rel="alternate" type="text/html" title="Página de erro customizada com controller" /><published>2017-05-22T20:06:00-03:00</published><updated>2017-05-22T20:06:00-03:00</updated><id>http://localhost:4000/laravel/pagina-de-erro-customizada-com-controller</id><content type="html" xml:base="http://localhost:4000/laravel/pagina-de-erro-customizada-com-controller.html">&lt;p&gt;O Laravel permite você de forma rápida criar páginas &lt;em&gt;estáticas&lt;/em&gt; de erro, como por exemplo para erros 500 e 404, porém essa abordagem funciona bem quando você apenas precisa por um conteúdo &lt;strong&gt;estático&lt;/strong&gt;. Como proceder em um caso que é necessário que um &lt;strong&gt;controller&lt;/strong&gt; seja chamado em uma dessas páginas de erro?&lt;/p&gt;
 
 &lt;p&gt;Para esses casos, primeiramente é necessário criar uma rota que será o end-point para sua página de erro. Podemos criar uma simples rota como:&lt;/p&gt;
 
